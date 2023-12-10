@@ -4,19 +4,31 @@
 
 
 
-@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "loginForm" }))
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
 {
-   /* <div>
-        @Html.LabelFor(m => m.Username)
-        @Html.TextBoxFor(m => m.Username)
-    </div>
-    <div>
-        @Html.LabelFor(m => m.Password)
-        @Html.PasswordFor(m => m.Password)
-    </div>
-    */
-    <div>
-        <input type="submit" value="Login" />
-    </div>
+    <li class="nav-item">
+        <a class="nav-link text-light font-weight-bold" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hi @User.Identity.Name!</a>
+    </li>
+    <li class="nav-item">
+        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button type="submit" class="nav-link btn btn-secondary text-light">Logout</button>
+        </form>
+    </li>
 }
+else
+{   
 
+        <div class="dropdown text-light">
+
+        <li class="main_nav_item">
+            <a class="main_nav_item" asp-area="Identity" asp-page="/Account/CustomerRegister">Register</a>
+        </li>
+
+        <li class="main_nav_item">
+            <a class="main_nav_item" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+            </div>
+ 
+
+}
+</ul>

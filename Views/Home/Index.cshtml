@@ -1,5 +1,5 @@
 ﻿﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Login";
    
 
 }
@@ -29,8 +29,7 @@
 							<ul class="main_nav_list">
 								<li class="main_nav_item"><a href="#">home</a></li>
 								<li class="main_nav_item"><a href="about.html">about us</a></li>
-								<li class=" user_box_login user_box_link main_nav_item"><a OnClick="login" href="#">login</a></li>
-								<li class=" user_box_register user_box_link main_nav_item"><a OnClick="register" href="#">register</a></li>
+								<partial name="_LoginPartial" />
 							
 							</ul>
 						</div>
@@ -79,8 +78,7 @@
 			<ul>
 				<li class="menu_item"><a href="#">home</a></li>
 				<li class="menu_item"><a href="about.html">about us</a></li>
-				<li class=" user_box_login user_box_link main_nav_item"><a href="#">login</a></li>
-				<li class=" user_box_register user_box_link main_nav_item"><a href="#">register</a></li>
+				<partial name="_LoginPartial" />
 			</ul>
 		</div>
 	</div>
@@ -186,9 +184,9 @@
 		</div>
 
 	</div>
-
+	@*
 	<!-- Search -->
-
+   
 	<div class="search">
 
 
@@ -1057,8 +1055,8 @@
 		</div>
 	</div>
 
-	<!-- Footer -->
-
+    <!-- Footer -->
+    *@
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
